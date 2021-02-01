@@ -8,9 +8,9 @@ namespace CoffeeShopOrder.Core.Model
 {
     public class BeveragePrice
     {
-        public decimal GetBeveragePrice()
-        {
+        //public decimal GetBeveragePrice()
+        //{
 
-        }
+        //}
     }
 }

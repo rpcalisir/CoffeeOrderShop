@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace CoffeeShopOrder.ConsoleUI
 {
-
     class Program
     {
         static readonly OrderCart cart = new OrderCart();
         static readonly OrderCart available = new OrderCart();
 
+        static readonly PopulateCart populate = new PopulateCart();
         static void Main(string[] args)
         {
             //Displays all available beverages
@@ -27,7 +27,7 @@ namespace CoffeeShopOrder.ConsoleUI
             Console.WriteLine();
 
             //Mocking a sample order from the user
-            PopulateCart.PopulateCartWithSampleData(cart);
+            populate.PopulateCartWithSampleData(cart);
 
             //Displays mocked order
             Console.WriteLine("Ordered beverages:");
