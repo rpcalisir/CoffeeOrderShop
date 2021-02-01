@@ -41,9 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enum\AdditionType.cs" />
+    <Compile Include="Enum\BeverageType.cs" />
     <Compile Include="Model\Addition.cs" />
     <Compile Include="Model\Beverage.cs" />
     <Compile Include="Interface\IBeverage.cs" />
+    <Compile Include="Interface\IAddition.cs" />
+    <Compile Include="Model\BeveragePrice.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

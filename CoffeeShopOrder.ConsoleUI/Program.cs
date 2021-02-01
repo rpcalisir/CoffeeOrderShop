@@ -7,13 +7,15 @@ using System.Threading.Tasks;
 
 namespace CoffeeShopOrder.ConsoleUI
 {
+
     class Program
     {
-        static OrderCart cart = new OrderCart();
-        static OrderCart available = new OrderCart();
+        static readonly OrderCart cart = new OrderCart();
+        static readonly OrderCart available = new OrderCart();
 
         static void Main(string[] args)
         {
+            //Displays all available beverages
             PopulateCart.GetAvailableDrinks(available);
             Console.WriteLine("Available Bavareges:");
 
@@ -24,7 +26,10 @@ namespace CoffeeShopOrder.ConsoleUI
 
             Console.WriteLine();
 
+            //Mocking a sample order from the user
             PopulateCart.PopulateCartWithSampleData(cart);
+
+            //Displays mocked order
             Console.WriteLine("Ordered beverages:");
             foreach (var item in cart.Items) 
             {
@@ -42,6 +47,7 @@ namespace CoffeeShopOrder.ConsoleUI
                 Console.WriteLine();
             }
 
+            //Displays current total for the placed order
             Console.WriteLine("Total cost: " + cart.GetTotalPrice());
 
             Console.ReadLine();

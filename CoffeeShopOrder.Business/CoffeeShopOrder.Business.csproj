@@ -41,7 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Factory\AdditionPriceFactory.cs" />
+    <Compile Include="Factory\BeveragePriceFactory.cs" />
+    <Compile Include="Interface\IAdditionPriceFactory.cs" />
     <Compile Include="Helper\GetBeverages.cs" />
+    <Compile Include="Interface\IBeveragePriceFactory.cs" />
     <Compile Include="OrderCart.cs" />
     <Compile Include="PlaceOrder.cs" />
     <Compile Include="PopulateCart.cs" />

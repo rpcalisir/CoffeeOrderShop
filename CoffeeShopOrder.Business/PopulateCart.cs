@@ -1,30 +1,35 @@
-﻿using CoffeeShopOrder.Core.Model;
-using System;
+﻿using CoffeeShopOrder.Business.Factory;
+using CoffeeShopOrder.Business.Interface;
+using CoffeeShopOrder.Core.Enum;
+using CoffeeShopOrder.Core.Model;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CoffeeShopOrder.Business
 {
     public class PopulateCart
     {
+        private readonly IBeveragePriceFactory _beveragePriceFactory;
+
+        public PopulateCart()
+        {
+            _beveragePriceFactory = new BeveragePriceFactory();
+        }
         public static void GetAvailableDrinks(OrderCart cart)
         {
 
-            cart.Availables.Add(new Beverage { BeverageName = "Black Coffee"});
-            cart.Availables.Add(new Beverage { BeverageName = "Latte"});
-            cart.Availables.Add(new Beverage { BeverageName = "Mocha"});
-            cart.Availables.Add(new Beverage { BeverageName = "Tea"});
+            cart.Availables.Add(new Beverage { BeverageName = BeverageType.blackCoffee});
+            cart.Availables.Add(new Beverage { BeverageName = BeverageType.latte});
+            cart.Availables.Add(new Beverage { BeverageName = BeverageType.mocha});
+            cart.Availables.Add(new Beverage { BeverageName = BeverageType.tea});
         }
 
-        public static void PopulateCartWithSampleData(OrderCart cart)
+        public void PopulateCartWithSampleData(OrderCart cart)
         {
             cart.Items.Add(new Beverage
             {
-                BeverageName = "Black Coffee",
+                BeverageName = BeverageType.blackCoffee,
                 BeverageQuantity = 1,
-                BeveragePrice = 5M,
+                BeveragePrice = _beveragePriceFactory.GetBeveragePrice(BeverageType.blackCoffee),
                 Additions = new List<Addition>
                 {
                    new Addition{ AdditionName = "Milk", AdditionPrice = 2M, AdditionQuantity = 1 }
@@ -40,7 +45,7 @@ namespace CoffeeShopOrder.Business
 
             cart.Items.Add(new Beverage
             {
-                BeverageName = "Mocha",
+                BeverageName = BeverageType.mocha,
                 BeverageQuantity = 1,
                 BeveragePrice = 7M,
                 Additions = new List<Addition>
@@ -48,10 +53,14 @@ namespace CoffeeShopOrder.Business
                    new Addition{ AdditionName = "Milk", AdditionPrice = 2M, AdditionQuantity = 2 }
                 }
             });
+            PlaceOrder(cart);
+        }
 
+        private static void PlaceOrder(OrderCart cart)
+        {
             cart.Items.Add(new Beverage
             {
-                BeverageName = "Latte",
+                BeverageName = BeverageType.latte,
                 BeverageQuantity = 1,
                 BeveragePrice = 9M,
                 Additions = new List<Addition>

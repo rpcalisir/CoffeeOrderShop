@@ -1,4 +1,5 @@
-﻿using CoffeeShopOrder.Core.Model;
+﻿using CoffeeShopOrder.Core.Enum;
+using CoffeeShopOrder.Core.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace CoffeeShopOrder.Core.Interface
 {
     public interface IBeverage
     {
-        string BeverageName { get; set; }
+        BeverageType BeverageName { get; set; }
         int BeverageQuantity { get; set; }
         decimal BeveragePrice { get; set; }
         List<Addition> Additions { get; set; }
