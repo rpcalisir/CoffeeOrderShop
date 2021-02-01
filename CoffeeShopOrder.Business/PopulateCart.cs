@@ -31,7 +31,6 @@ namespace CoffeeShopOrder.Business
                 }
             });
 
-
             //cart.Items.Add(new Beverage("Black Coffee", 1, 5M).Additions.Add(new Addition
             //{
             //    AdditionName = "Garlic",

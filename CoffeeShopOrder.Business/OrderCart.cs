@@ -16,7 +16,16 @@ namespace CoffeeShopOrder.Business
 
         public decimal GetTotalPrice()
         {
-            int totalBeveragePrice = Items.Sum(p => p.BeveragePrice * p.BeverageQuantity);
+            decimal totalBeveragePrice = Items.Sum(p => (p.BeveragePrice * p.BeverageQuantity));
+            var additionPrices = Items.SelectMany(a => a.Additions)
+                                               .GroupBy(i => i.AdditionName)
+                                               .Select(grp => new
+                                               {
+                                                   Prc = grp.Key,
+                                                   Sum = grp.Sum(t => t.AdditionPrice * t.AdditionQuantity)
+                                               });
+            decimal totalAdditionPrice = additionPrices.Sum(t => t.Sum);
+            return totalAdditionPrice + totalBeveragePrice;
         }
 
     }

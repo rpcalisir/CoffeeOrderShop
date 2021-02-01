@@ -42,7 +42,7 @@ namespace CoffeeShopOrder.ConsoleUI
                 Console.WriteLine();
             }
 
-            //Console.WriteLine("Total cost: " + cart.GetTotalPrice());
+            Console.WriteLine("Total cost: " + cart.GetTotalPrice());
 
             Console.ReadLine();
         }
