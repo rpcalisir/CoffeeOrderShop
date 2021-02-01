@@ -1,22 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.ComponentModel;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace CoffeeShopOrder.Core.Enum
 {
     public enum BeverageType
     {
         none,
-        [Description("Black Coffee")]
+        [Display(Name = "Black Coffee")]
         blackCoffee,
-        [Description("Latte")]
+        [Display(Name = "Latte")]
         latte,
-        [Description("Mocha")]
+        [Display(Name = "Mocha")]
         mocha,
-        [Description("Tea")]
+        [Display(Name = "Tea")]
         tea
     }
 }

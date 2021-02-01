@@ -1,21 +1,15 @@
 ﻿using CoffeeShopOrder.Core.Enum;
 using CoffeeShopOrder.Core.Model;
+using CoffeeShopOrder.Interface;
 using System.Collections.Generic;
 
 namespace CoffeeShopOrder.Business.Facade
 {
     public class OrderManagement : FacadeBase
     {
-        private readonly OrderCart _orderCart;
-        //public List<Beverage> Items { get; set; } = new List<Beverage>();
-
-        public OrderManagement()
+        public IOrder PlaceOrder(BeverageType beverageType, int beverageQuantity, AdditionType additionType = AdditionType.none, int additionQuantity = 0)
         {
-            _orderCart = new OrderCart();
-        } 
-        public OrderCart PlaceOrder(BeverageType beverageType, int beverageQuantity, AdditionType additionType = AdditionType.none, int additionQuantity = 0)
-        {
-            _orderCart.Items.Add(new Beverage
+            _order.Orders.Add(new Beverage
             {
                 BeverageName = beverageType,
                 BeverageQuantity = beverageQuantity,
@@ -25,7 +19,7 @@ namespace CoffeeShopOrder.Business.Facade
                    new Addition{ AdditionName = additionType, AdditionPrice = _additionPriceFactory.GetAdditionPrice(additionType), AdditionQuantity = additionQuantity }
                 }
             });
-            return _orderCart;
+            return _order;
 
             //PlaceOrder(cart);
         }

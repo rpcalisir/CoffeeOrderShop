@@ -13,11 +13,17 @@ namespace CoffeeShopOrder.Business.Factory
         {
             switch (additionType.ToLower())
             {
-                case "milk":
+                //case "milk":
+                //    return AdditionType.milk;
+                //case "chocolate sauce":
+                //    return AdditionType.chocolateSauce;
+                //case "hazelnut syrup":
+                //    return AdditionType.hazelnutSyrup;
+                case "1":
                     return AdditionType.milk;
-                case "chocolate sauce":
+                case "2":
                     return AdditionType.chocolateSauce;
-                case "hazelnut syrup":
+                case "3":
                     return AdditionType.hazelnutSyrup;
                 default:
                     return AdditionType.none;

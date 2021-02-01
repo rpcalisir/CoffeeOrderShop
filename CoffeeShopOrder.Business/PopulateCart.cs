@@ -14,16 +14,16 @@ namespace CoffeeShopOrder.Business
         {
             _beveragePriceFactory = new BeveragePriceFactory();
         }
-        public static void GetAvailableDrinks(OrderCart cart)
+        public static void GetAvailableDrinks(Order cart)
         {
 
-            cart.Availables.Add(new Beverage { BeverageName = BeverageType.blackCoffee});
-            cart.Availables.Add(new Beverage { BeverageName = BeverageType.latte});
-            cart.Availables.Add(new Beverage { BeverageName = BeverageType.mocha});
-            cart.Availables.Add(new Beverage { BeverageName = BeverageType.tea});
+            //cart.Availables.Add(new Beverage { BeverageName = BeverageType.blackCoffee});
+            //cart.Availables.Add(new Beverage { BeverageName = BeverageType.latte});
+            //cart.Availables.Add(new Beverage { BeverageName = BeverageType.mocha});
+            //cart.Availables.Add(new Beverage { BeverageName = BeverageType.tea});
         }
 
-        public void PopulateCartWithSampleData(OrderCart cart)
+        public void PopulateCartWithSampleData(Order cart)
         {
             //cart.Items.Add(new Beverage
             //{
@@ -56,7 +56,7 @@ namespace CoffeeShopOrder.Business
             //PlaceOrder(cart);
         }
 
-        private static void PlaceOrder(OrderCart cart)
+        private static void PlaceOrder(Order cart)
         {
             //cart.Items.Add(new Beverage
             //{
