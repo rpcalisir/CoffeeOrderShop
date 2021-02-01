@@ -23,7 +23,7 @@ namespace CoffeeShopOrder.Business.Factory
                 case BeverageType.tea:
                     return 2M;
                 default:
-                    throw new NotImplementedException("Invalid beverage type");
+                    return 0;
             }
         }
     }

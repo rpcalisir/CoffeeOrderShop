@@ -41,8 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Facade\FacadeBase.cs" />
+    <Compile Include="Facade\OrderManagement.cs" />
+    <Compile Include="Factory\AdditionFactory.cs" />
     <Compile Include="Factory\AdditionPriceFactory.cs" />
+    <Compile Include="Factory\BeverageFactory.cs" />
     <Compile Include="Factory\BeveragePriceFactory.cs" />
+    <Compile Include="Interface\IBeverageFactory.cs" />
     <Compile Include="Interface\IAdditionPriceFactory.cs" />
     <Compile Include="Helper\GetBeverages.cs" />
     <Compile Include="Interface\IBeveragePriceFactory.cs" />

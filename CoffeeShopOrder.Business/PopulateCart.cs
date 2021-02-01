@@ -25,16 +25,16 @@ namespace CoffeeShopOrder.Business
 
         public void PopulateCartWithSampleData(OrderCart cart)
         {
-            cart.Items.Add(new Beverage
-            {
-                BeverageName = BeverageType.blackCoffee,
-                BeverageQuantity = 1,
-                BeveragePrice = _beveragePriceFactory.GetBeveragePrice(BeverageType.blackCoffee),
-                Additions = new List<Addition>
-                {
-                   new Addition{ AdditionName = "Milk", AdditionPrice = 2M, AdditionQuantity = 1 }
-                }
-            });
+            //cart.Items.Add(new Beverage
+            //{
+            //    BeverageName = BeverageType.blackCoffee,
+            //    BeverageQuantity = 1,
+            //    BeveragePrice = _beveragePriceFactory.GetBeveragePrice(BeverageType.blackCoffee),
+            //    Additions = new List<Addition>
+            //    {
+            //       new Addition{ AdditionName = "Milk", AdditionPrice = 2M, AdditionQuantity = 1 }
+            //    }
+            //});
 
             //cart.Items.Add(new Beverage("Black Coffee", 1, 5M).Additions.Add(new Addition
             //{
@@ -43,32 +43,32 @@ namespace CoffeeShopOrder.Business
             //    AdditionQuantity = 1
             //}); 
 
-            cart.Items.Add(new Beverage
-            {
-                BeverageName = BeverageType.mocha,
-                BeverageQuantity = 1,
-                BeveragePrice = 7M,
-                Additions = new List<Addition>
-                {
-                   new Addition{ AdditionName = "Milk", AdditionPrice = 2M, AdditionQuantity = 2 }
-                }
-            });
-            PlaceOrder(cart);
+            //cart.Items.Add(new Beverage
+            //{
+            //    BeverageName = BeverageType.mocha,
+            //    BeverageQuantity = 1,
+            //    BeveragePrice = 7M,
+            //    Additions = new List<Addition>
+            //    {
+            //       new Addition{ AdditionName = "Milk", AdditionPrice = 2M, AdditionQuantity = 2 }
+            //    }
+            //});
+            //PlaceOrder(cart);
         }
 
         private static void PlaceOrder(OrderCart cart)
         {
-            cart.Items.Add(new Beverage
-            {
-                BeverageName = BeverageType.latte,
-                BeverageQuantity = 1,
-                BeveragePrice = 9M,
-                Additions = new List<Addition>
-                {
-                   new Addition{ AdditionName = "Milk", AdditionPrice = 2M, AdditionQuantity = 1 },
-                   new Addition{ AdditionName = "Hazelnut Syrup", AdditionPrice = 2, AdditionQuantity = 1 }
-                }
-            });
+            //cart.Items.Add(new Beverage
+            //{
+            //    BeverageName = BeverageType.latte,
+            //    BeverageQuantity = 1,
+            //    BeveragePrice = 9M,
+            //    Additions = new List<Addition>
+            //    {
+            //       new Addition{ AdditionName = "Milk", AdditionPrice = 2M, AdditionQuantity = 1 },
+            //       new Addition{ AdditionName = "Hazelnut Syrup", AdditionPrice = 2, AdditionQuantity = 1 }
+            //    }
+            //});
         }
     }
 }

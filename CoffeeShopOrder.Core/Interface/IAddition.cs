@@ -1,9 +1,11 @@
-﻿namespace CoffeeShopOrder.Core.Interface
+﻿using CoffeeShopOrder.Core.Enum;
+
+namespace CoffeeShopOrder.Core.Interface
 {
     public interface IAddition
     {
-        string AdditionName { get; set; }
-        decimal AdditionPrice { get; set; }
+        AdditionType AdditionName { get; set; }
         int AdditionQuantity { get; set; }
+        decimal AdditionPrice { get; set; }
     }
 }

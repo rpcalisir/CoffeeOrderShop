@@ -8,6 +8,7 @@ namespace CoffeeShopOrder.Core.Enum
 {
     public enum AdditionType
     {
+        none,
         milk,
         chocolateSauce,
         hazelnutSyrup

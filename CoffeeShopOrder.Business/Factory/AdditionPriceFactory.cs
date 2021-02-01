@@ -21,7 +21,7 @@ namespace CoffeeShopOrder.Business.Factory
                 case AdditionType.hazelnutSyrup:
                     return 6M;
                 default:
-                    throw new NotImplementedException("Invalid addition type");
+                    return 0;
             }
         }
     }

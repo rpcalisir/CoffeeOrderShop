@@ -9,6 +9,7 @@ namespace CoffeeShopOrder.Core.Enum
 {
     public enum BeverageType
     {
+        none,
         [Description("Black Coffee")]
         blackCoffee,
         [Description("Latte")]
