@@ -2,10 +2,6 @@
 using CoffeeShopOrder.Business.Factory;
 using CoffeeShopOrder.Business.Interface;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CoffeeShopOrder.ConsoleUI.Helper
 {
@@ -54,6 +50,5 @@ namespace CoffeeShopOrder.ConsoleUI.Helper
             Console.WriteLine("Total amount: " + cart.GetTotalPrice());
             Console.WriteLine("<---------------------------------------------------------------------------------->");
         }
-
     }
 }
