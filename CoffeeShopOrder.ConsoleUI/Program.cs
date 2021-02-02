@@ -24,7 +24,7 @@ namespace CoffeeShopOrder.ConsoleUI
             {
                 placeOrder.PlaceMockedOrder();
                 Console.WriteLine();
-                Console.WriteLine("Press enter to place an order:");
+                Console.WriteLine("Press enter to make addition to current order:");
                 Console.WriteLine("Press -1 to finish order:");
                 entry = Console.ReadLine();
             }
@@ -49,5 +49,7 @@ namespace CoffeeShopOrder.ConsoleUI
             string result = ecpected == actual ? "SUCCESS" : "FAIL";
             Console.WriteLine("TestCase" + testcaseNumber + ": " + result);
         }
+
+        pri
     }
 }
