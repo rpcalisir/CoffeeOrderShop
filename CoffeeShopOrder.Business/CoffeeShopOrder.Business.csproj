@@ -47,6 +47,7 @@
     <Compile Include="Factory\AdditionPriceFactory.cs" />
     <Compile Include="Factory\BeverageFactory.cs" />
     <Compile Include="Factory\BeveragePriceFactory.cs" />
+    <Compile Include="Interface\IAdditionFactory.cs" />
     <Compile Include="Interface\IBeverageFactory.cs" />
     <Compile Include="Interface\IAdditionPriceFactory.cs" />
     <Compile Include="Helper\GetBeverages.cs" />

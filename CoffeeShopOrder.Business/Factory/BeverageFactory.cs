@@ -1,10 +1,5 @@
 ﻿using CoffeeShopOrder.Business.Interface;
 using CoffeeShopOrder.Core.Enum;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CoffeeShopOrder.Business.Factory
 {
@@ -14,14 +9,6 @@ namespace CoffeeShopOrder.Business.Factory
         {
             switch (beverageType.ToLower())
             {
-                //case "black coffee":
-                //    return BeverageType.blackCoffee;
-                //case "latte":
-                //    return BeverageType.latte;
-                //case "mocha":
-                //    return BeverageType.mocha;
-                //case "tea":
-                //    return BeverageType.tea;
                 case "1":
                     return BeverageType.blackCoffee;
                 case "2":

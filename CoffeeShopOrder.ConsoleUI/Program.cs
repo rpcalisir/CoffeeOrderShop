@@ -2,6 +2,7 @@
 using CoffeeShopOrder.Business.Facade;
 using CoffeeShopOrder.Business.Factory;
 using CoffeeShopOrder.Business.Helper;
+using CoffeeShopOrder.Business.Interface;
 using CoffeeShopOrder.Core.Enum;
 using System;
 
@@ -10,8 +11,8 @@ namespace CoffeeShopOrder.ConsoleUI
     class Program
     {
         static readonly OrderManagement orderManagement = new OrderManagement();
-        static readonly BeverageFactory beverageFactory = new BeverageFactory();
-        static readonly AdditionFactory additionFactory = new AdditionFactory();
+        static readonly IBeverageFactory beverageFactory = new BeverageFactory();
+        static readonly IAdditionFactory additionFactory = new AdditionFactory();
 
         static void Main(string[] args)
         {
@@ -67,7 +68,7 @@ namespace CoffeeShopOrder.ConsoleUI
             var cart = orderManagement.PlaceOrder(beverageFactory.GetBeverageType(beverageType), beverageQuantity, additionFactory.GetBeverageType(additionType), additionQuantity);
 
             ////Displays mocked order
-            //Console.WriteLine("Ordered beverages:");
+            Console.WriteLine("Ordered Beverages:");
             foreach (var order in cart.Orders)
             {
                 Console.WriteLine("Beverage:");
@@ -85,7 +86,7 @@ namespace CoffeeShopOrder.ConsoleUI
             }
 
             //Displays current total for the placed order
-            Console.WriteLine("Total cost: " + cart.GetTotalPrice());
+            Console.WriteLine("Total amount: " + cart.GetTotalPrice());
 
             Console.ReadLine();
         }

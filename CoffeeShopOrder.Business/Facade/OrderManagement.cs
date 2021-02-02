@@ -20,36 +20,6 @@ namespace CoffeeShopOrder.Business.Facade
                 }
             });
             return _order;
-
-            //PlaceOrder(cart);
         }
-        //public decimal GetTotalPrice()
-        //{
-        //    decimal totalBeveragePrice = Items.Sum(p => (p.BeveragePrice * p.BeverageQuantity));
-        //    var additionPrices = Items.SelectMany(a => a.Additions)
-        //                                       .GroupBy(i => i.AdditionName)
-        //                                       .Select(grp => new
-        //                                       {
-        //                                           Prc = grp.Key,
-        //                                           Sum = grp.Sum(t => t.AdditionPrice * t.AdditionQuantity)
-        //                                       });
-        //    decimal totalAdditionPrice = additionPrices.Sum(t => t.Sum);
-        //    return totalAdditionPrice + totalBeveragePrice;
-        //}
-
-        //private static void PlaceOrder(OrderCart cart)
-        //{
-        //    cart.Items.Add(new Beverage
-        //    {
-        //        BeverageName = BeverageType.latte,
-        //        BeverageQuantity = 1,
-        //        BeveragePrice = 9M,
-        //        Additions = new List<Addition>
-        //        {
-        //           new Addition{ AdditionName = "Milk", AdditionPrice = 2M, AdditionQuantity = 1 },
-        //           new Addition{ AdditionName = "Hazelnut Syrup", AdditionPrice = 2, AdditionQuantity = 1 }
-        //        }
-        //    });
-        //}
     }
 }
