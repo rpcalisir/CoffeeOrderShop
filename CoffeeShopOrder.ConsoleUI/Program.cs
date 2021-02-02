@@ -29,13 +29,13 @@ namespace CoffeeShopOrder.ConsoleUI
                 entry = Console.ReadLine();
             }
 
-            CheckTotalPriceWithAdditionTrue(1);
-            CheckTotalPriceWithoutAdditionTrue(2);
-            CheckTotalPriceWithAdditionFalse(3);
+            CheckTotalPriceWithAdditionIsCorrect(1);
+            CheckTotalPriceWithoutAdditionIsCorrect(2);
+            CheckTotalPriceWithAdditionIsNotCorrect(3);
 
             Console.ReadLine();
         }
-        private static void CheckTotalPriceWithAdditionTrue(int testcaseNumber)
+        private static void CheckTotalPriceWithAdditionIsCorrect(int testcaseNumber)
         {
             //Arrange
             OrderManagement orderManagement = new OrderManagement();
@@ -51,7 +51,7 @@ namespace CoffeeShopOrder.ConsoleUI
             Console.WriteLine("TestCase" + testcaseNumber + ": " + result);
         }
 
-        private static void CheckTotalPriceWithoutAdditionTrue(int testcaseNumber)
+        private static void CheckTotalPriceWithoutAdditionIsCorrect(int testcaseNumber)
         {
             //Arrange
             OrderManagement orderManagement = new OrderManagement();
@@ -65,7 +65,7 @@ namespace CoffeeShopOrder.ConsoleUI
             string result = expected == actual ? "SUCCESS" : "FAIL";
             Console.WriteLine("TestCase" + testcaseNumber + ": " + result);
         }
-        private static void CheckTotalPriceWithAdditionFalse(int testcaseNumber)
+        private static void CheckTotalPriceWithAdditionIsNotCorrect(int testcaseNumber)
         {
             //Arrange
             OrderManagement orderManagement = new OrderManagement();
@@ -77,7 +77,7 @@ namespace CoffeeShopOrder.ConsoleUI
             decimal expected = 1000;
 
             //Assert
-            string result = expected == actual ? "SUCCESS" : "FAIL";
+            string result = expected != actual ? "SUCCESS" : "FAIL";
             Console.WriteLine("TestCase" + testcaseNumber + ": " + result);
         }
 
