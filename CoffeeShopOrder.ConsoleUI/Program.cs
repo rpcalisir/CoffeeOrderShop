@@ -2,56 +2,52 @@
 using CoffeeShopOrder.Business.Factory;
 using CoffeeShopOrder.Business.Interface;
 using CoffeeShopOrder.ConsoleUI.Helper;
+using CoffeeShopOrder.Core.Enum;
 using System;
 
 namespace CoffeeShopOrder.ConsoleUI
 {
     class Program
     {
-        static readonly OrderManagement orderManagement = new OrderManagement();
-        static readonly IBeverageFactory beverageFactory = new BeverageFactory();
-        static readonly IAdditionFactory additionFactory = new AdditionFactory();
+        //static readonly OrderManagement orderManagement = new OrderManagement();
+        //    static readonly IBeverageFactory beverageFactory = new BeverageFactory();
+        //    static readonly IAdditionFactory additionFactory = new AdditionFactory();
 
         static void Main(string[] args)
         {
-            //Displays all available beverages
-            Console.WriteLine("{0,-20}\n", "Available Bavareges:");
-            //foreach (var beverageName in GetBeverages.GetAllBeverages())
-            Display.DisplayBeverages();
+            PlaceOrder placeOrder = new PlaceOrder();
 
-            Console.WriteLine();
-
-            //Display all available additions
-            Console.WriteLine("{0,-20}\n", "Available Additions:");
-            Display.DisplayAdditions();
-
-            Console.WriteLine("What's your choice of beverage?");
-            string beverageType = GetUserInput.GetBeverageType();
-
-            Console.WriteLine("How many of beverages would you like?");
-            int beverageQuantity = GetUserInput.GetBeverageQuantity();
-
-            Console.WriteLine("What's your choice of addition?");
-            Console.WriteLine("Enter -1 in case no addition is desired.");
-            string additionType = GetUserInput.GetAdditionType();
-
-            int additionQuantity = 0;
-            if (additionType != "-1")
+            Console.WriteLine("Press enter to place an order:");
+            Console.WriteLine("Press -1 to finish order:");
+            string entry = Console.ReadLine();
+            while (entry!="-1")
             {
-                Console.WriteLine("How many of additions would you like?");
-                additionQuantity = GetUserInput.GetAdditionQuantity();
+                placeOrder.PlaceMockedOrder();
+                Console.WriteLine();
+                Console.WriteLine("Press enter to place an order:");
+                Console.WriteLine("Press -1 to finish order:");
+                entry = Console.ReadLine();
             }
 
-            var cart = orderManagement.PlaceOrder(beverageFactory.GetBeverageType(beverageType), beverageQuantity, additionFactory.GetBeverageType(additionType), additionQuantity);
-
-            ////Displays mocked order
-            Console.WriteLine("Ordered Beverages:");
-            Display.DisplayMockedOrder(cart);
-
-            //Displays current total for the placed order
-            Console.WriteLine("Total amount: " + cart.GetTotalPrice());
+            CheckTotalPrice(1);
 
             Console.ReadLine();
+        }
+        private static void CheckTotalPrice(int testcaseNumber)
+        {
+            //Arrange
+            OrderManagement orderManagement = new OrderManagement();
+
+            var cart = orderManagement.PlaceOrder(BeverageType.blackCoffee, 1, AdditionType.chocolateSauce, 1);
+
+
+            //Act
+            decimal actual = cart.GetTotalPrice();
+            decimal ecpected = 9;
+
+            //Assert
+            string result = ecpected == actual ? "SUCCESS" : "FAIL";
+            Console.WriteLine("TestCase" + testcaseNumber + ": " + result);
         }
     }
 }

@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Helper\Display.cs" />
     <Compile Include="Helper\GetUserInput.cs" />
+    <Compile Include="Helper\PlaceOrder.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
