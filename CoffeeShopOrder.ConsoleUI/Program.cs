@@ -2,7 +2,6 @@
 using CoffeeShopOrder.Business.Factory;
 using CoffeeShopOrder.Business.Interface;
 using CoffeeShopOrder.ConsoleUI.Helper;
-using CoffeeShopOrder.Core.Enum;
 using System;
 
 namespace CoffeeShopOrder.ConsoleUI
