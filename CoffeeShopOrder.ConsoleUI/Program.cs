@@ -20,21 +20,22 @@ namespace CoffeeShopOrder.ConsoleUI
             Console.WriteLine("Press enter to place a new order:");
             Console.WriteLine("Press -1 to finish order:");
             string entry = Console.ReadLine();
-            while (entry!="-1")
+            while (entry != "-1")
             {
                 placeOrder.PlaceMockedOrder();
                 Console.WriteLine();
-                Console.WriteLine("Press enter to place a new order:");
+                Console.WriteLine("Press enter to make addition onto current order:");
                 Console.WriteLine("Press -1 to finish order:");
                 entry = Console.ReadLine();
             }
 
-            CheckTotalPriceWithAddition(1);
-            CheckTotalPriceWithoutAddition(2);
+            CheckTotalPriceWithAdditionTrue(1);
+            CheckTotalPriceWithoutAdditionTrue(2);
+            CheckTotalPriceWithAdditionFalse(3);
 
             Console.ReadLine();
         }
-        private static void CheckTotalPriceWithAddition(int testcaseNumber)
+        private static void CheckTotalPriceWithAdditionTrue(int testcaseNumber)
         {
             //Arrange
             OrderManagement orderManagement = new OrderManagement();
@@ -50,7 +51,7 @@ namespace CoffeeShopOrder.ConsoleUI
             Console.WriteLine("TestCase" + testcaseNumber + ": " + result);
         }
 
-        private static void CheckTotalPriceWithoutAddition(int testcaseNumber)
+        private static void CheckTotalPriceWithoutAdditionTrue(int testcaseNumber)
         {
             //Arrange
             OrderManagement orderManagement = new OrderManagement();
@@ -64,5 +65,21 @@ namespace CoffeeShopOrder.ConsoleUI
             string result = expected == actual ? "SUCCESS" : "FAIL";
             Console.WriteLine("TestCase" + testcaseNumber + ": " + result);
         }
+        private static void CheckTotalPriceWithAdditionFalse(int testcaseNumber)
+        {
+            //Arrange
+            OrderManagement orderManagement = new OrderManagement();
+
+            var cart = orderManagement.PlaceOrder(BeverageType.blackCoffee, 1, AdditionType.chocolateSauce, 1);
+
+            //Act
+            decimal actual = cart.GetTotalPrice();
+            decimal expected = 1000;
+
+            //Assert
+            string result = expected == actual ? "SUCCESS" : "FAIL";
+            Console.WriteLine("TestCase" + testcaseNumber + ": " + result);
+        }
+
     }
 }
