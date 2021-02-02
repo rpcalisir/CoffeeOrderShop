@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helper\Display.cs" />
+    <Compile Include="Helper\GetUserInput.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -54,9 +56,9 @@
       <Project>{a5046e84-7b33-44bd-9beb-ec777d9f321e}</Project>
       <Name>CoffeeShopOrder.Business</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CoffeeShopOrder.Core\CoffeeShopOrder.DAL.csproj">
+    <ProjectReference Include="..\CoffeeShopOrder.Core\CoffeeShopOrder.Core.csproj">
       <Project>{E29E17F8-4C29-4174-AC1E-A416E06585DE}</Project>
-      <Name>CoffeeShopOrder.DAL</Name>
+      <Name>CoffeeShopOrder.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

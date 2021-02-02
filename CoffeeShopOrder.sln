@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeShopOrder.ConsoleUI",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeShopOrder.Business", "CoffeeShopOrder.Business\CoffeeShopOrder.Business.csproj", "{A5046E84-7B33-44BD-9BEB-EC777D9F321E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeShopOrder.DAL", "CoffeeShopOrder.Core\CoffeeShopOrder.DAL.csproj", "{E29E17F8-4C29-4174-AC1E-A416E06585DE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeShopOrder.Core", "CoffeeShopOrder.Core\CoffeeShopOrder.Core.csproj", "{E29E17F8-4C29-4174-AC1E-A416E06585DE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

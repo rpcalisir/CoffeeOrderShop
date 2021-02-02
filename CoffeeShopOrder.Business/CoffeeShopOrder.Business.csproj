@@ -59,9 +59,9 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\CoffeeShopOrder.Core\CoffeeShopOrder.DAL.csproj">
+    <ProjectReference Include="..\CoffeeShopOrder.Core\CoffeeShopOrder.Core.csproj">
       <Project>{e29e17f8-4c29-4174-ac1e-a416e06585de}</Project>
-      <Name>CoffeeShopOrder.DAL</Name>
+      <Name>CoffeeShopOrder.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
