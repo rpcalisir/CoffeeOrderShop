@@ -11,7 +11,12 @@ namespace CoffeeShopOrder.Business
 {
     public class Order : IOrder
     {
-        public List<Beverage> Orders { get; set; } = new List<Beverage>();
+        public List<Beverage> Orders { get; set; }
+
+        public Order()
+        {
+            Orders = new List<Beverage>();
+        }
 
         public decimal GetTotalPrice()
         {

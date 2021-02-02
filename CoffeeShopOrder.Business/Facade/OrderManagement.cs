@@ -7,6 +7,12 @@ namespace CoffeeShopOrder.Business.Facade
 {
     public class OrderManagement : FacadeBase
     {
+        //Instantiate the Order object here for seperate calculation of total price
+        protected IOrder _order;
+        public OrderManagement()
+        {
+            _order = new Order();
+        }
         public IOrder PlaceOrder(BeverageType beverageType, int beverageQuantity, AdditionType additionType = AdditionType.none, int additionQuantity = 0)
         {
             _order.Orders.Add(new Beverage
